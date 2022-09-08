@@ -1,0 +1,11 @@
+
+resource "aws_instance" "consty" {
+  ami           = var.my_ami
+  instance_type = "t2.micro"
+  count = 10
+
+  tags = {
+    Name = "consty_ec2 -${count.index}"
+  }
+}
+ 
